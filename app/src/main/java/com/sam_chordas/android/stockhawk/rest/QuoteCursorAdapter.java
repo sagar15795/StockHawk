@@ -80,6 +80,7 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
         } else {
             viewHolder.change.setText(cursor.getString(cursor.getColumnIndex("change")));
         }
+
     }
 
     @Override
@@ -108,6 +109,9 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
             symbol.setTypeface(robotoLight);
             bidPrice = (TextView) itemView.findViewById(R.id.bid_price);
             change = (TextView) itemView.findViewById(R.id.change);
+
+            itemView.setContentDescription(symbol+" has bid price dollar "+bidPrice+" with " +
+                    "change "+change );
         }
 
         @Override

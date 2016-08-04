@@ -234,8 +234,18 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        mCursorAdapter.swapCursor(data);
-        mCursor = data;
+
+        if(data.getCount()==0){
+            tv.setText(getString(R.string.no_stock_error));
+            tv.setContentDescription(getString(R.string.no_stock_error));
+            tv.setVisibility(View.VISIBLE);
+
+        }else{
+            tv.setVisibility(View.GONE);
+            mCursorAdapter.swapCursor(data);
+            mCursor = data;
+
+        }
     }
 
     @Override

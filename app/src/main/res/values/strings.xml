@@ -10,4 +10,6 @@
   <string name="input_hint">FB</string>
   <string name="input_prefill"></string>
   <string name="network_toast">Uh-oh! This app requires an internet connection</string>
+  <string name="no_stock_error">No stock Found Please add first</string>
+  <string name="add_fab_desc">Add Stock Fab Button</string>
 </resources>
