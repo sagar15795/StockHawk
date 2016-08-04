@@ -110,8 +110,9 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
             bidPrice = (TextView) itemView.findViewById(R.id.bid_price);
             change = (TextView) itemView.findViewById(R.id.change);
 
-            itemView.setContentDescription(symbol+" has bid price dollar "+bidPrice+" with " +
-                    "change "+change );
+            itemView.setContentDescription(symbol.getText()+" has bid price dollar "+bidPrice
+                    .getText()+" with " +
+                    "change "+change.getText() );
         }
 
         @Override
