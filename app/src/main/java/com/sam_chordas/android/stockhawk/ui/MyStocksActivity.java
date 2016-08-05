@@ -56,6 +56,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     private Context mContext;
     private Cursor mCursor;
     private TextView tv;
+    private String ticker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +94,11 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                     public void onItemClick(View v, int position) {
                         //TODO:
                         // do something on item click
+                        ticker = ((TextView) v.findViewById(R.id.stock_symbol)).getText()
+                                .toString();
+                        Intent intent = new Intent(MyStocksActivity.this, MyStockGraphActivity.class);
+                        intent.putExtra("ticker", ticker);
+                        startActivity(intent);
                     }
                 }));
         recyclerView.setAdapter(mCursorAdapter);
@@ -235,12 +241,12 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
 
-        if(data.getCount()==0){
+        if (data.getCount() == 0) {
             tv.setText(getString(R.string.no_stock_error));
             tv.setContentDescription(getString(R.string.no_stock_error));
             tv.setVisibility(View.VISIBLE);
 
-        }else{
+        } else {
             tv.setVisibility(View.GONE);
             mCursorAdapter.swapCursor(data);
             mCursor = data;
