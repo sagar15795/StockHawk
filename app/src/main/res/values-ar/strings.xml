@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Stock Hawk-ar</string>
+    <string name="app_name" >Stock Hawk-ar</string>
 
     <string name="action_example">Example action--ar</string>
 
@@ -11,4 +11,5 @@
     <string name="input_hint">FB-ar</string>
     <string name="input_prefill"></string>
     <string name="network_toast">Uh-oh! This app requires an internet connection-ar</string>
+    <string name="stock_exits">This stock is already saved!-ar</string>
 </resources>

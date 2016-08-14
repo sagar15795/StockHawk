@@ -96,7 +96,8 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                         // do something on item click
                         ticker = ((TextView) v.findViewById(R.id.stock_symbol)).getText()
                                 .toString();
-                        Intent intent = new Intent(MyStocksActivity.this, MyStockGraphActivity.class);
+                        Intent intent = new Intent(MyStocksActivity.this, MyStockGraphActivity
+                                .class);
                         intent.putExtra("ticker", ticker);
                         startActivity(intent);
                     }
@@ -131,8 +132,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                                             if (c.getCount() != 0) {
                                                 Toast toast =
                                                         Toast.makeText(MyStocksActivity.this,
-                                                                "This stock" +
-                                                                        " is already saved!",
+                                                                getString(R.string.stock_exits),
                                                                 Toast.LENGTH_LONG);
                                                 toast.setGravity(Gravity.CENTER, Gravity.CENTER, 0);
                                                 toast.show();
